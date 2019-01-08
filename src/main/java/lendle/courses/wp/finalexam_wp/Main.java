@@ -106,7 +106,7 @@ public class Main extends javax.swing.JFrame {
         DefaultListModel model = (DefaultListModel) this.jList1.getModel();
         if (model.contains(title)) {
             //Q1: 開啟 message dialog （10%）
-            
+            JOptionPane.showMessageDialog(this, "不可以重複!","Message!",JOptionPane.INFORMATION_MESSAGE);
             ////////////////////
             return;
         }
@@ -114,7 +114,8 @@ public class Main extends javax.swing.JFrame {
         model.addElement(title);
         //Q2: 建立 TaskFrame（等同於 JInternalFrame）
         //加到 jDesktopPane1 (20%)
-        
+        TaskFrame taskFrame = (TaskFrame) new JInternalFrame();
+        taskFrame.setContentPane(jDesktopPane1);
         ///////////////////////////////////////
     }//GEN-LAST:event_buttonNewActionPerformed
 
